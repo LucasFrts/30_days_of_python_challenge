@@ -59,10 +59,11 @@ def cats_api():
         print('Frequency of Breed')
         print(tabulate([[unique_breed[i], counts_breed[i]]for i in range(len(unique_breed))], headers=["Breed", "Frequency"], tablefmt="orgtbl"))
 # cats_api()
-
+import webbrowser
 def web_scrapping():
     response = requests.get('https://archive.ics.uci.edu/ml/datasets.php').text
     soup = BeautifulSoup(response)
     with open('./scrapped.html', 'w') as f:
         f.write(soup.prettify())
+        webbrowser.open('./scrapped.html')
 web_scrapping()
