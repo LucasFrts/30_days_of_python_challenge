@@ -1,0 +1,12 @@
+#Virtal env comands
+virtualenv venv
+source venv/bin/activate
+pip install flask
+
+#Requeriments comands
+touch requeriments.txt
+pip freeze > requeriments.txt
+
+
+#Procfile text comand:
+web: python app.py

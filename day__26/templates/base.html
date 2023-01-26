@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato:300,400|Nunito:300,400|Raleway:300,400,500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='libs/bootstrap/bootstrap.min.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/app.css')}}"
+    />
+    <script src="{{ url_for('static', filename='libs/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Flask Studies</title>
+    {% endif %}
+  </head>
+  <body>
+    {% include "navigation.html" %}
+    <main class="content-page">{% block content %} {% endblock %}</main>
+  </body>
+</html>
